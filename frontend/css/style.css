@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    height: 120px;
+    background-color: rgb(183, 206, 224);
+    text-align: center;
+    margin-bottom: 80px;
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 4px 2px rgb(183, 206, 224);
+}
+
+header h1 {
+    padding: 20px;
+    font-size: 35px;
+    color: rgb(34, 94, 204)
+}
+
+header p {
+    font-size: 15px;
+    color: rgb(56, 93, 218)
+}
+
+footer {
+    padding: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(61, 65, 65)
+}
