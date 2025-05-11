@@ -1,9 +1,13 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from gtts import gTTS 
 from pydantic import BaseModel
 
 app = FastAPI()
+
+app.mount("/audio", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "audio")), name="audio")
 
 app.add_middleware(
     CORSMiddleware,
@@ -27,7 +31,9 @@ def home():
 def convert_text_to_voice(bodyRequest: BodyRequest):
     try:
         tts = gTTS(bodyRequest.text, lang=bodyRequest.lang)
-        tts.save("audio.mp3")
+        audio_dir = os.path.join(os.path.dirname(__file__), "audio")
+        
+        tts.save(os.path.join(audio_dir, "audio.mp3"))
         return { "status": 200 }
     except Exception as err:
         print(err)

@@ -11,14 +11,10 @@ export async function requestAudio(text, lang) {
             }
         )
 
-        const response = await request.json();
-
         if (request.ok) {
-            return response; 
+            console.log("200 - OK");
         }
-
-        return response;
     } catch (err) {
-        alert(err);
+        //
     }
 };
