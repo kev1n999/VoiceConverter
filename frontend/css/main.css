@@ -16,6 +16,13 @@ main {
     flex-direction: column;
     gap: 20px;
     border-radius: 20px;
+    box-shadow: 2px 4px 4px rgb(183, 206, 224);
+
+    transition: transform 0.3s ease;
+}
+
+.menu:hover {
+    transform: scale(1.01);
 }
 
 .menu label {
@@ -63,11 +70,11 @@ button {
     background-color: rgb(45, 90, 158);
     color: white;
 
-    transition: background 0.5s ease;
+    transition: background 0.6s ease;
 }
 
 button:hover {
-    background:rgb(101, 140, 179)
+    background:rgb(39, 77, 109)
 }
 
 select {
