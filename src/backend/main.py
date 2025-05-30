@@ -19,7 +19,7 @@ app.add_middleware(
 if not os.path.exists("audios"):
     os.makedirs("audios")
 
-app.mount("/audios", StaticFiles(directory="audios"), name="audios")
+app.mount("src/backend/audios", StaticFiles(directory="audios"), name="audios")
 
 class BodyRequest(BaseModel):
     text: str
@@ -35,7 +35,7 @@ def home():
 def convert_text_to_voice(bodyRequest: BodyRequest):
     try:
         filename = f"{uuid4()}.mp3"
-        path = f"audios/{filename}"
+        path = f"src/backend/audios/{filename}"
         
         tts = gTTS(bodyRequest.text, lang=bodyRequest.lang)
         tts.save(path)
